@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+<h2>Bienvenido al Sistema de Gestión de Pedidos</h2>
+<p>Desde aquí puedes gestionar clientes, productos y pedidos.</p>
+<p><a href="{% url 'crear_cliente' %}">Crear Cliente</a></p>
+<p><a href="{% url 'crear_producto' %}">Crear Producto</a></p>
+<p><a href="{% url 'crear_pedido' %}">Crear Pedido</a></p>
+<p><a href="{% url 'buscar_cliente' %}">Buscar Cliente</a></p>
+{% endblock %}

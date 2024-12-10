@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Buscar Cliente{% endblock %}
+
+{% block content %}
+<h2>Buscar Cliente</h2>
+<form method="get">
+    <input type="text" name="q" placeholder="Nombre del cliente" value="{{ request.GET.q }}">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h3>Resultados:</h3>
+    <ul>
+        {% for cliente in resultados %}
+            <li>{{ cliente.nombre }} - {{ cliente.telefono }}</li>
+        {% endfor %}
+    </ul>
+{% elif request.GET.q %}
+    <p>No se encontraron clientes con el nombre "{{ request.GET.q }}".</p>
+{% endif %}
+{% endblock %}
